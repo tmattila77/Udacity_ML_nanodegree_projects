@@ -21,7 +21,7 @@ def process_image(image_path):
 
 #make a prediction
 def predict(savedModel_directory, image_path):
-    reloaded_SavedModel = tf.saved_model.load(savedModel_directory) # load the model from SavedModel/SavedModel
+    reloaded_SavedModel = tf.saved_model.load(savedModel_directory) 
     processed_image = process_image(image_path)
     processed_image_4 = np.expand_dims(processed_image, axis = 0)
     final_image = tf.convert_to_tensor(processed_image_4)
